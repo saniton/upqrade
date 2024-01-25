@@ -1,0 +1,30 @@
+{
+    "SocialMediaButton1":{
+        "body": "Medios de comunicación social",
+        "close": "cerca"
+    },
+    "NavButton":{
+        "body": "Leer sobre nosotros"
+    },
+    "Feedback": {
+        "body": "Dar opinion",
+        "placeholder": "tus comentarios aquí...",
+        "close": "cerca",
+        "submit": "entregar"
+    },
+    "Footer1": {
+        "body": "¿Quieres mejorar tu negocio? Contáctenos"
+    },
+    "RegisterForm": {
+        "tablenumber": "Número de mesa:",
+        "name": "nombre:",
+        "phonenumber": "Número de teléfono:",
+        "placeholder": "Ingrese un número de teléfono de 10 dígitos"
+    },
+    "Submission": {
+        "submitteddata":"Datos enviados",
+        "tablenumber": "Número de mesa:",
+        "name": "nombre:",
+        "phonenumber": "Número de teléfono:"
+    }
+}

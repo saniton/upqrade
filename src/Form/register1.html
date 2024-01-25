@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5ZR4Z6D7');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>upQRade</title>
+    <link rel="shortcut icon" href="https://upqrade.xyz/assets/upqradeIcon.ico" type="image/x-icon" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #9c27b0, #673ab7);
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding: 15px;
+            padding-inline: 20px;
+            border-radius: 18px;
+            margin: 10px;
+            background-color: #6b0b0b3a;
+            overflow-x: hidden;
+        }
+
+        .logo img {
+            max-height: 60px;
+        }
+
+        .upgrade-text {
+            font-size: 30px;
+            font-weight: 800;
+            margin-inline: 0.6em;
+            letter-spacing: 1.5px;
+            font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+        }
+
+        .whatsapp-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .whatsapp-prefix {
+            margin-right: 5px;
+        }
+
+        input[type="checkbox"] {
+            display: inline;
+            width: auto;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            flex-direction: column;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin: 0.4em 0px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            margin-right: 20px;
+            margin-left: 2px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        button {
+            background-color: #ffa500;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .err-msg {
+            font-size: 12px;
+            margin: 0;
+            padding: 3px 0px 0px 0px;
+            color: red;
+        }
+
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #close {
+            position: absolute;
+            top: 1%;
+            right: 1%;
+            z-index: 3;
+            font-size: 50px;
+            color: white;
+            font-weight: 700
+        }
+
+        #pic {
+            display: block;
+            width: 100%;
+            max-height: 700px;
+            max-width: 800px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .req-star {
+            color: red;
+        }
+        #upiSwitch{
+            line-height: normal;
+            width: 20px;
+            height: 20px;
+            margin-inline: 1.02em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZR4Z6D7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="header">
+        <div class="logo">
+            <img src="https://upqrade.xyz/assets/b_upqrade_logo.png" alt="upQRade Logo" />
+        </div>
+        <div class="upgrade-text">upQRade</div>
+    </nav>
+
+    <div class="container">
+        <h2>Registration</h2>
+        <form action="register.php" method="POST" id="registrationForm" onsubmit="return validateForm()" accept-charset="UTF-8" enctype="multipart/form-data">
+            <input type="hidden" name="website" id="website" />
+            <div class="input-group">
+                <label for="companyName">Company Name <span class="req-star"> * </span></label>
+                <div class="whatsapp-input">
+                    <input type="text" id="companyName" name="companyName" placeholder="Enter Your Company Name Here eg: upQRade" required aria-invalid="false" aria-errormessage="bNameError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Company_name_Help.png', 'Name help image')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="bNameError" class="err-msg" aria-live="off" style="visibility:hidden"><b>Invalid Business Name (Min: 2 | Max: 40)</div>
+            </div>
+            <div class="input-group">
+                <label for="companyLogo">Company Logo</label>
+                <div class="whatsapp-input">
+                    <input type="file" accept="image/png, image/jpeg, image/jpg" id="companyLogo" name="companyLogo" aria-invalid="false" aria-errormessage="bLogoError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Comapny_Logo_Help.png', 'Logo help image')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="bLogoError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Image (Under 5MB | .jpeg/.jpg/.png )</div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email ID <span class="req-star"> * </span></label>
+                <input type="email" placeholder="eg: username@hostname.abc" id="email" name="email" required aria-invalid="false" aria-errormessage="eError" />
+                <div id="eError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Email</div>
+            </div>
+            <div class="input-group">
+                <label for="whatsapp">WhatsApp Number <span class="req-star"> * </span></label>
+                <div class="whatsapp-input">
+                    <span class="whatsapp-prefix">+91</span>
+                    <input type="number" id="whatsapp" name="whatsapp" required aria-invalid="false" aria-errormessage="waError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/WhatsApp_Helpp.png', 'WhatsApp help image')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="waError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Phone</div>
+            </div>
+
+            <div class="input-group">
+                <label id="upiLabel" for="upi">UPI ID</label>
+                <div class="whatsapp-input">
+                    <input type="text" id="upi" name="upi" placeholder="eg: johndoe@okhdfcbank" aria-invalid="false" aria-errormessage="upiError" required />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/UPI_help.png','UPI help image')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                    
+                    <input type="checkbox" id="upiSwitch" checked/>
+                    
+                </div>
+                <div id="upiError" class="err-msg" aria-live="off" style="visibility:hidden"> Invalid UPI ID </div>
+            </div>
+            <div class="input-group">
+                <label for="pass">Password <span class="req-star"> * </span></label>
+                <input type="password" id="pass" name="pass" required />
+            </div>
+            <div class="input-group">
+                <label for="cPass">Confirm Password <span class="req-star"> * </span></label>
+                <input type="password" name="cPass" id="cPass" required aria-invalid="false" aria-errormessage="pError" />
+                <div id="pError" class="err-msg" aria-live="off" style="visibility:hidden"> Password do not match </div>
+            </div>
+            <div class="input-group">
+                <label for="googleMaps">Google Maps Listing <span class="req-star"> * </span></label>
+                <div class="whatsapp-input">
+                    <!-- Change Listing to Link-->
+                    <input type="text" id="googleMaps" name="googleMaps" required placeholder="Copy Link in Share Google Maps Page" aria-invalid="false" aria-errormessage="gMapError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/gmap_help.png','Google Map help image')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="gMapError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Google Map Link</div>
+            </div>
+            <div class="input-group">
+                <label for="Review_Link">Review Link<span class="req-star"> * </span></label>
+                <div class="whatsapp-input">
+                    <input type="url" id="Review_Link" name="Review_Link" placeholder="Lead Customers to Your Favourite Page" required aria-invalid="false" aria-errormessage="rLinkError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Link_based_entries_Help.png','Link Accuracy')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="rLinkError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Review Link</div>
+            </div>
+            <div class="input-group">
+                <label for="own_website">Own Website</label>
+                <div class="whatsapp-input">
+                    <input type="url" id="own_website" name="own_website" placeholder="If you have a Website eg: https://www.perceptionyst.com" aria-invalid="false" aria-errormessage="owLinkError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Link_based_entries_Help.png','Link Accuracy')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="owLinkError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Link Charater Length</div>
+            </div>
+            <div class="input-group">
+                <label for="facebook">Facebook Link</label>
+                <div class="whatsapp-input">
+                    <input type="url" id="facebook" name="facebook" placeholder="eg: https://www.facebook.com/perceptionystsolutions" aria-invalid="false" aria-errormessage="fLinkError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Link_based_entries_Help.png','Link Accuracy')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="fLinkError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Facebook Link </div>
+            </div>
+            <div class="input-group">
+                <label for="instagram">Instagram Link</label>
+                <div class="whatsapp-input">
+                    <input type="url" id="instagram" name="instagram" placeholder="eg: https://www.instagram.com/perceptionystsolutions" aria-invalid="false" aria-errormessage="iLinkError" />
+                    <svg onclick="turnOnOverlay('https://upqrade.xyz/assets/Link_based_entries_Help.png','Link Accuracy')" style="margin-left: 1em;" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                    </svg>
+                </div>
+                <div id="iLinkError" class="err-msg" aria-live="off" style="visibility:hidden">Invalid Instagram Link </div>
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="terms" name="terms" required>I have read and agree to <a href="https://upqrade.xyz/terms-and-conditions.html">terms and conditions</a> of services of upQRade
+            </div>
+
+            <button type="submit" name="regBtn" id="registerButton">Register</button>
+
+        </form>
+
+    </div>
+    
+<div id="footer">
+        <div id="footEmail">
+             For Support | Assistance | Feedback - Reach out to us - <br>WhatsApp-
+            <a href="https://api.whatsapp.com/send?phone=%2b919529875561" target="_blank">+91 95298 75561</a> <br>Email- <a href="mailto:upqrade@perceptionyst.com">upqrade@perceptionyst.com</a>
+        </div>
+        <div id="footImgs">
+            <a href="https://upqrade.xyz/" target="_blank">
+                <img id="upqradeLogo" src="https://upqrade.xyz/assets/w_upqrade_logo.png" alt="upQRade Logo">
+            </a>
+            <a href="https://perceptionyst.com/" target="_blank">
+                <img id="perLogo" src="https://upqrade.xyz/assets/w_perceptionyst_logo.png" alt="Perceptionyst Solutions Logo">
+            </a>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #footer {
+            height: 100px;
+            position: bottom;
+            overflow: hidden;
+            padding: 10px;
+            background-color: #000;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        #footEmail a{
+            color: white;
+        }
+
+        #footEmail {
+            text-align: left;
+            margin-left: 5%;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: 'Segoe UI';
+            font-weight: 500;
+        }
+
+        #footImgs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #footImgs img {
+            margin-inline: 2.5em;
+        }
+
+        #perLogo {
+            max-width: 200px;
+            max-height: 100px;
+            height: auto;
+            width: 100%;
+        }
+
+        #upqradeLogo {
+            max-width: 125px;
+            max-height: 125px;
+            height: auto;
+            width: 100%;
+        }
+
+        @media screen and (width < 730px) {
+            #footer {
+                height: 74px;
+            }
+
+            #perLogo {
+                max-width: 100px;
+                max-height: 50px;
+            }
+
+            #footEmail {
+                font-size: 12px;
+                margin-left: 5px;
+            }
+
+            #footImgs img {
+                margin-inline: 1.5em;
+            }
+
+            #upqradeLogo {
+                max-width: 50px;
+                max-height: 50px;
+            }
+        }
+
+        @media screen and (width < 470px) {
+            #footer {
+                height: 64px;
+            }
+
+            #perLogo {
+                max-width: 80px;
+                max-height: 40px;
+            }
+
+            #footImgs img {
+                margin-inline: 1em;
+            }
+
+            #footEmail {
+                font-size: 10px;
+            }
+
+            #upqradeLogo {
+                max-width: 40px;
+                max-height: 40px;
+            }
+        }
+
+        @media screen and (width < 330px) {
+
+            #footer {
+                height: 54px;
+            }
+
+            #perLogo {
+                max-width: 60px;
+                max-height: 30px;
+            }
+
+            #footEmail {
+                font-size: 8px;
+            }
+
+            #upqradeLogo {
+                max-width: 30px;
+                max-height: 30px;
+            }
+        }
+    </style>    <div id="overlay">
+        <span id="close" onclick="turnOffOverlay()">&times;</span>
+        <img id="pic" alt="Help image">
+    </div>
+
+    <script>
+        const overlay = document.getElementById("overlay");
+        const upiSwitch =document.getElementById("upiSwitch");
+        const upiLabel =document.getElementById("upiLabel")
+
+        const bNameElement = document.getElementById("companyName");
+        const bNameError = document.getElementById("bNameError");
+        const logoElement = document.getElementById("companyLogo");
+        const logoError = document.getElementById("bLogoError");
+        const waElement = document.getElementById("whatsapp");
+        const waError = document.getElementById("waError");
+        const cpElement = document.getElementById("cPass");
+        const pError = document.getElementById("pError");
+        const eElement = document.getElementById("email");
+        const eError = document.getElementById("eError");
+        const upiElement = document.getElementById("upi");
+        const upiError = document.getElementById("upiError");
+        const gMapElement = document.getElementById("googleMaps");
+        const gMapError = document.getElementById("gMapError");
+        const rLinkElement = document.getElementById("Review_Link");
+        const rLinkError = document.getElementById("rLinkError");
+        const ownWebElement = document.getElementById("own_website");
+        const ownWebError = document.getElementById("owLinkError");
+        const fLinkElement = document.getElementById("facebook");
+        const fLinkError = document.getElementById("fLinkError");
+        const iLinkElement = document.getElementById("instagram");
+        const iLinkError = document.getElementById("iLinkError");
+
+        let bNameValue, bLogoValue, waValue, eValue, upiValue, pValue, cpValue, gMapValue, rLinkValue, owLinkValue, fLinkValue, iLinkValue;
+
+        bNameElement.addEventListener("input", (e) => {
+            bNameValue = bNameElement.value;
+            if (bNameValue.length > 0) {
+                if (bNameValue.length > 1 && bNameValue.length <= 40) {
+                    bNameElement.setAttribute('aria-invalid', 'false');
+                    bNameError.style.visibility = "hidden";
+                    bNameError.setAttribute('aria-live', 'off');
+                } else {
+                    bNameElement.setAttribute('aria-invalid', 'true');
+                    bNameError.style.visibility = "visible";
+                    bNameError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                bNameElement.setAttribute('aria-invalid', 'false');
+                bNameError.style.visibility = "hidden";
+                bNameError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        logoElement.addEventListener("input", (e) => {
+            bLogoValue = logoElement.value;
+            let allowedMimes = ['png', 'jpg', 'jpeg'];
+            if (bLogoValue) {
+                let mime = bLogoValue.split('.').pop(); // get the extension/mime of image file
+                let kb = logoElement.files[0].size / 1024; // convert the file size into byte to kb
+                let mb = kb / 1024; // convert kb to mb
+                // if allowedMimes array have the extension and image size less than 5MB
+                if (allowedMimes.includes(mime) && mb < 5) {
+                    logoElement.setAttribute('aria-invalid', 'false');
+                    logoError.style.visibility = "hidden";
+                    logoError.setAttribute('aria-live', 'off');
+                } else {
+                    logoElement.setAttribute('aria-invalid', 'true');
+                    logoError.style.visibility = "visible";
+                    logoError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                logoElement.setAttribute('aria-invalid', 'false');
+                logoError.style.visibility = "hidden";
+                logoError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        waElement.addEventListener("input", (e) => {
+            waValue = document.getElementById("whatsapp").value;
+            if (waValue.length > 0) {
+                if (waValue.length != 10) {
+                    waElement.setAttribute('aria-invalid', 'true');
+                    waError.style.visibility = "visible";
+                    waError.setAttribute('aria-live', 'assertive');
+                } else if (waValue.length == 10) {
+                    waElement.setAttribute('aria-invalid', 'false');
+                    waError.style.visibility = "hidden";
+                    waError.setAttribute('aria-live', 'off');
+                }
+            } else {
+                waElement.setAttribute('aria-invalid', 'false');
+                waError.style.visibility = "hidden";
+                waError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        cpElement.addEventListener("input", (e) => {
+            pValue = document.getElementById("pass").value;
+            cpValue = document.getElementById("cPass").value;
+            if (cpValue.length > 0) {
+                if (pValue !== cpValue) {
+                    cpElement.setAttribute('aria-invalid', 'true');
+                    pError.style.visibility = "visible";
+                    pError.setAttribute('aria-live', 'assertive');
+                } else if (pValue === cpValue) {
+                    cpElement.setAttribute('aria-invalid', 'false');
+                    pError.style.visibility = "hidden";
+                    pError.setAttribute('aria-live', 'off');
+                }
+            } else {
+                cpElement.setAttribute('aria-invalid', 'false');
+                pError.style.visibility = "hidden";
+                pError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        upiElement.addEventListener("input",  (e) => {
+            upiValue = document.getElementById("upi").value;
+            if (upiValue.length > 0) {
+                if (!/^[0-9A-Za-z.-]{2,256}@[A-Za-z]{2,256}$/.test(upiValue)) {
+                    upiElement.setAttribute('aria-invalid', 'true');
+                    upiError.style.visibility = "visible";
+                    upiError.setAttribute('aria-live', 'assertive');
+                } else {
+                    upiElement.setAttribute('aria-invalid', 'false');
+                    upiError.style.visibility = "hidden";
+                    upiError.setAttribute('aria-live', 'off');
+                }
+            } else {
+                upiElement.setAttribute('aria-invalid', 'false');
+                upiError.style.visibility = "hidden";
+                upiError.setAttribute('aria-live', 'off');
+            }
+        });
+
+
+        upiSwitch.addEventListener('input',(e)=>{
+            if(upiSwitch.checked){
+                upiElement.removeAttribute("disabled");
+                upiElement.setAttribute("placeholder","eg: johndoe@okhdfcbank");
+                upiElement.setAttribute("required","true");
+                upiElement.style.backgroundColor = "#333";
+                upiLabel.innerHTML = "UPI ID";
+            }else{
+                upiElement.value = "";
+                upiElement.dispatchEvent(new Event('input', { bubbles: true }));
+                upiElement.setAttribute("placeholder","");
+                upiElement.removeAttribute("required");
+                upiElement.setAttribute("disabled",true);
+                upiElement.style.backgroundColor = "#010";
+                upiLabel.innerHTML = "<strike>UPI ID</strike>";
+            }
+        })
+
+        eElement.addEventListener("input", (e) => {
+            eValue = document.getElementById("email").value;
+            if (eValue.length > 0) {
+                if (!String(eValue)
+                    .toLowerCase()
+                    .match(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    )) {
+                    eElement.setAttribute('aria-invalid', 'true');
+                    eError.style.visibility = "visible";
+                    eError.setAttribute('aria-live', 'assertive');
+                } else {
+                    eElement.setAttribute('aria-invalid', 'false');
+                    eError.style.visibility = "hidden";
+                    eError.setAttribute('aria-live', 'off');
+                }
+            } else {
+                eElement.setAttribute('aria-invalid', 'false');
+                eError.style.visibility = "hidden";
+                eError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        gMapElement.addEventListener("input", (e) => {
+            gMapValue = gMapElement.value;
+            if (gMapValue.length > 0) {
+                if (gMapValue.length < 500) {
+                    gMapElement.setAttribute('aria-invalid', 'false');
+                    gMapError.style.visibility = "hidden";
+                    gMapError.setAttribute('aria-live', 'off');
+                } else {
+                    gMapElement.setAttribute('aria-invalid', 'true');
+                    gMapError.style.visibility = "visible";
+                    gMapError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                gMapElement.setAttribute('aria-invalid', 'false');
+                gMapError.style.visibility = "hidden";
+                gMapError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        rLinkElement.addEventListener("input", (e) => {
+            rLinkValue = rLinkElement.value;
+            if (rLinkValue.length > 0) {
+                if (rLinkValue.length < 500) {
+                    rLinkElement.setAttribute('aria-invalid', 'false');
+                    rLinkError.style.visibility = "hidden";
+                    rLinkError.setAttribute('aria-live', 'off');
+                } else {
+                    rLinkElement.setAttribute('aria-invalid', 'true');
+                    rLinkError.style.visibility = "visible";
+                    rLinkError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                rLinkElement.setAttribute('aria-invalid', 'false');
+                rLinkError.style.visibility = "hidden";
+                rLinkError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        ownWebElement.addEventListener("input", (e) => {
+            owLinkValue = ownWebElement.value;
+            if (owLinkValue.length > 0) {
+                if (owLinkValue.length < 500) {
+                    ownWebElement.setAttribute('aria-invalid', 'false');
+                    ownWebError.style.visibility = "hidden";
+                    ownWebError.setAttribute('aria-live', 'off');
+                } else {
+                    ownWebElement.setAttribute('aria-invalid', 'true');
+                    ownWebError.style.visibility = "visible";
+                    ownWebError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                ownWebElement.setAttribute('aria-invalid', 'false');
+                ownWebError.style.visibility = "hidden";
+                ownWebError.setAttribute('aria-live', 'off');
+            }
+        });
+        fLinkElement.addEventListener("input", (e) => {
+            fLinkValue = fLinkElement.value;
+            if (fLinkValue.length > 0) {
+                if (fLinkValue.length < 500) {
+                    fLinkElement.setAttribute('aria-invalid', 'false');
+                    fLinkError.style.visibility = "hidden";
+                    fLinkError.setAttribute('aria-live', 'off');
+                } else {
+                    fLinkElement.setAttribute('aria-invalid', 'true');
+                    fLinkError.style.visibility = "visible";
+                    fLinkError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                fLinkElement.setAttribute('aria-invalid', 'false');
+                fLinkError.style.visibility = "hidden";
+                fLinkError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        iLinkElement.addEventListener("input", (e) => {
+            iLinkValue = iLinkElement.value;
+            if (iLinkValue.length > 0) {
+                if (iLinkValue.length < 500) {
+                    iLinkElement.setAttribute('aria-invalid', 'false');
+                    iLinkError.style.visibility = "hidden";
+                    iLinkError.setAttribute('aria-live', 'off');
+                } else {
+                    iLinkElement.setAttribute('aria-invalid', 'true');
+                    iLinkError.style.visibility = "visible";
+                    iLinkError.setAttribute('aria-live', 'assertive');
+                }
+            } else {
+                iLinkElement.setAttribute('aria-invalid', 'false');
+                iLinkError.style.visibility = "hidden";
+                iLinkError.setAttribute('aria-live', 'off');
+            }
+        });
+
+        bNameElement.addEventListener("input", () => {
+            const sanitized = bNameElement.value.replace(/[^a-zA-Z0-9@ ]/g, ""); // Allows only lowercase & uppercase alphabets, numbers 1-9 and @
+            bNameElement.value = sanitized;
+        });
+
+        function validateForm() {
+            bNameValue = document.getElementById("companyName").value;
+            bLogoValue = logoElement.value;
+            upiValue = document.getElementById("upi").value;
+            eValue = document.getElementById("email").value;
+            waValue = document.getElementById("whatsapp").value;
+            pValue = document.getElementById("pass").value;
+            cpValue = document.getElementById("cPass").value;
+            gMapValue = document.getElementById("googleMaps").value;
+            rLinkValue = rLinkElement.value;
+            owLinkValue = ownWebElement.value;
+            fLinkValue = fLinkElement.value;
+            iLinkValue = iLinkElement.value;
+            let allowedMimes = ['png', 'jpg', 'jpeg'];
+            //Business Name
+            if (bNameValue === 0 && bNameValue > 41) {
+                console.error("ERR: Invalid Business Name");
+                return false;
+            }
+            // Business Logo
+            if (bLogoValue) {
+                let mime = bLogoValue.split('.').pop(); // get the extension/mime of image file
+                let kb = logoElement.files[0].size / 1024; // convert the file size into byte to kb
+                let mb = kb / 1024; // convert kb to mb
+                if (!(allowedMimes.includes(mime) && mb < 5)) {
+                    console.error("ERR: Invalid Business Logo");
+                    return false;
+                }
+            }
+            if ( upiSwitch.checked && !/^[0-9A-Za-z.-]{2,256}@[A-Za-z]{2,64}$/.test(upiValue)) {
+                console.error("ERR: Invalid UPI ID");
+                return false;
+            }
+            if (waValue.length != 10) {
+                console.error("ERR: Invalid WhatsApp Number");
+                return false;
+            }
+            if (!String(eValue)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                )) {
+                console.error("ERR: Invalid Email");
+                return false;
+            }
+            // Password & Confirm Password
+            if (pValue !== cpValue) return false;
+            // Google Map Link
+            if (gMapValue.length === 0 || gMapValue.length > 500){
+                console.error("ERR: Invalid Google Map Link");
+                return false;
+            }
+            // Review Link
+            if (rLinkValue.length === 0 || rLinkValue.length > 500){
+                console.error("ERR: Invalid Review Link");
+                return false;
+            }
+            // Own Website Link
+            if (owLinkValue.length > 500){ 
+                console.error("ERR: Invalid Own Website Link");
+                return false;
+            }
+            //Facebook Link
+            if (fLinkValue.length > 500){
+                console.error("ERR: Invalid Facebook Link");
+                return false;
+            }
+            //Instagram Link
+            if (iLinkValue.length > 500){
+                console.error("ERR: Invalid Instagram Link");
+                return false;
+            }
+
+            return true;
+        }
+
+        function turnOnOverlay(source, alternative) {
+            overlay.style.display = "block";
+            let pic = document.getElementById("pic");
+            pic.src = source;
+            pic.alt = alternative;
+        }
+
+        function turnOffOverlay() {
+            overlay.style.display = "none";
+        }
+
+        overlay.addEventListener("click", function(event) {
+            if (event.target === overlay) {
+                overlay.style.display = "none";
+            }
+        });
+        
+        
+         //this code is to disable the right click
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          });
+    
+    </script>
+</body>
+
+</html>

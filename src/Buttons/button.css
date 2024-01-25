@@ -1,0 +1,79 @@
+/* Button/Button.css
+
+.custom-button {
+    Define your button styles here
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3;
+  }*/
+
+
+  /*Button1*/
+  #Scanbtn{
+    background:url("https://upqrade.xyz/assets/w_upqrade_logo.png");
+    background-color: rgb(27, 28, 87);
+    color: black;
+    padding: 100px 200px;
+    border: 1px solid violet;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 200px;
+    width: 400px;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+
+  }    
+  #Scanbtn:hover{
+    background:url("https://upqrade.xyz/assets/w_upqrade_logo.png");
+  }
+  /*Button1*/
+
+
+  #button {
+    background-color: rgb(27, 28, 87);
+    color: black;
+  border: 1px solid violet;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 400px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+
+  }
+  
+  #button:hover {
+    background: rgb(255, 122, 237);
+  }
+  
+
+  .button-container {
+    display: flex;
+    flex-direction:Column;
+    align-items: center;
+    margin-top: 10px; /* Adjust margin as needed */  
+    margin-bottom: 20px;
+}
+  
+  .rw {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px; /* Adjust margin between rows as needed */
+    height: 70px;
+    min-width: 43vw;
+    max-width: 180px;
+    padding: 25px 50px;
+  }

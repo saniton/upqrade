@@ -1,0 +1,30 @@
+{
+    "SocialMediaButton1":{
+        "body": "Social Media",
+        "close": "Close"
+    },
+    "NavButton":{
+        "body": "Read About Us"
+    },
+    "Feedback": {
+        "body": "Give Feedback",
+        "placeholder": "Write your feedback here...",
+        "close": "Close",
+        "submit": "Submit"
+    },
+    "Footer1": {
+        "body": "Want to upQRade your business too? Contact us on"
+    },
+    "RegisterForm": {
+        "tablenumber": "Table Number:",
+        "name": "Name:",
+        "phonenumber": "Phone Number:",
+        "placeholder": "Enter a 10-digit phone number"
+    },
+    "Submission": {
+        "submitteddata":"Submitted Data",
+        "tablenumber": "Table Number:",
+        "name": "Name:",
+        "phonenumber": "Phone Number:"
+    }
+}

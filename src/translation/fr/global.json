@@ -1,0 +1,31 @@
+{
+    "SocialMediaButton1":{
+        "body": "réseaux sociaux",
+        "close": "fermer"
+    },
+    "NavButton":{
+        "body": "Lire à propos de nous"
+    },
+    "Feedback": {
+        "body": "Donner votre avis",
+        "placeholder": "Écrivez vos commentaires ici...",
+        "close": "fermer",
+        "submit": "soumettre"
+
+    },
+    "Footer1": {
+        "body": "Vous souhaitez améliorer votre entreprise ? Contactez-nous"
+    },
+    "RegisterForm": {
+        "tablenumber": "Numéro de tableau:",
+        "name": "nom:",
+        "phonenumber": "numéro de téléphone:",
+        "placeholder": "Entrez un numéro de téléphone à 10 chiffres"
+    },
+    "Submission": {
+        "submitteddata":"Données soumises",
+        "tablenumber": "Numéro de tableau:",
+        "name": "nom:",
+        "phonenumber": "numéro de téléphone:"
+    }
+}

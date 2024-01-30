@@ -1,0 +1,30 @@
+{
+  "projects": {
+    "default": "sdw2000"
+  },
+  "targets": {
+    "hosting": {
+      "trial": {
+        "hosting": {
+          "public": "build",
+          "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+          ],
+          "rewrites": [
+            {
+              "source": "**",
+              "destination": "/index.html"
+            }
+          ]
+        }
+      }
+    },
+    "functions": {
+      "trial": {
+        "source": "server"
+      }
+    }
+  }
+}

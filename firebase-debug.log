@@ -133,3 +133,553 @@ Node.js v21.5.0
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2024-01-31T09:14:07.692Z] ----------------------------------------------------------------------
+[debug] [2024-01-31T09:14:07.700Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-31T09:14:07.702Z] CLI Version:   13.1.0
+[debug] [2024-01-31T09:14:07.702Z] Platform:      win32
+[debug] [2024-01-31T09:14:07.703Z] Node Version:  v21.5.0
+[debug] [2024-01-31T09:14:07.704Z] Time:          Wed Jan 31 2024 14:44:07 GMT+0530 (India Standard Time)
+[debug] [2024-01-31T09:14:07.705Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-31T09:14:07.953Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-31T09:14:07.954Z] > authorizing via signed-in user (saniton@perceptionyst.com)
+[debug] [2024-01-31T09:14:07.955Z] [iam] checking project mog-aasu for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-31T09:14:07.959Z] > refreshing access token with scopes: []
+[debug] [2024-01-31T09:14:07.964Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-01-31T09:14:07.964Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-31T09:14:08.460Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-01-31T09:14:08.461Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-31T09:14:08.483Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions [none]
+[debug] [2024-01-31T09:14:08.483Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T09:14:08.484Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T09:14:10.028Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions 200
+[debug] [2024-01-31T09:14:10.029Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T09:14:10.030Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-31T09:14:10.030Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T09:14:11.579Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-31T09:14:11.579Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T09:14:11.582Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T09:14:12.039Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T09:14:12.040Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] 
+[info] === Deploying to 'mog-aasu'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-01-31T09:14:12.051Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T09:14:12.491Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T09:14:12.492Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-31T09:14:12.502Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-31T09:14:12.503Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T09:14:12.507Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-31T09:14:12.507Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T09:14:12.511Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-31T09:14:12.511Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T09:14:12.516Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-31T09:14:12.516Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T09:14:14.485Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-31T09:14:14.486Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-31T09:14:14.493Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-31T09:14:14.493Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-31T09:14:14.504Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-31T09:14:14.505Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-31T09:14:14.508Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-31T09:14:14.509Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-31T09:14:14.512Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig [none]
+[debug] [2024-01-31T09:14:15.235Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig 200
+[debug] [2024-01-31T09:14:15.235Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig {"projectId":"mog-aasu","storageBucket":"mog-aasu.appspot.com"}
+[debug] [2024-01-31T09:14:15.237Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs [none]
+[debug] [2024-01-31T09:14:16.052Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs 200
+[debug] [2024-01-31T09:14:16.053Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs {}
+[debug] [2024-01-31T09:14:16.057Z] Validating nodejs source
+[debug] [2024-01-31T09:14:20.432Z] > [functions] package.json contents: {
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.4"
+  }
+}
+[debug] [2024-01-31T09:14:20.432Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-31T09:14:20.440Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-31T09:14:20.475Z] Found firebase-functions binary at 'C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\node_modules\.bin\firebase-functions'
+[info] Serving at port 8682
+
+[info] url:mongodb://localhost:27017/upqrade
+
+[error] (node:16860) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] (node:16860) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:16860) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8682
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\server.js:206:7)
+    at Module._compile (node:internal/modules/cjs/loader:1375:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1234:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1899:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8682
+}
+
+Node.js v21.5.0
+
+[debug] [2024-01-31T09:14:24.760Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8682/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8682/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-01-31T09:14:25.020Z] FetchError: request to http://127.0.0.1:8682/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-31T10:09:09.795Z] ----------------------------------------------------------------------
+[debug] [2024-01-31T10:09:09.803Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-31T10:09:09.804Z] CLI Version:   13.1.0
+[debug] [2024-01-31T10:09:09.805Z] Platform:      win32
+[debug] [2024-01-31T10:09:09.806Z] Node Version:  v21.5.0
+[debug] [2024-01-31T10:09:09.806Z] Time:          Wed Jan 31 2024 15:39:09 GMT+0530 (India Standard Time)
+[debug] [2024-01-31T10:09:09.807Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-31T10:09:10.058Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-31T10:09:10.060Z] > authorizing via signed-in user (saniton@perceptionyst.com)
+[debug] [2024-01-31T10:09:10.060Z] [iam] checking project mog-aasu for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-31T10:09:10.065Z] > refreshing access token with scopes: []
+[debug] [2024-01-31T10:09:10.070Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-01-31T10:09:10.070Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-31T10:09:10.608Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-01-31T10:09:10.609Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-31T10:09:10.630Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions [none]
+[debug] [2024-01-31T10:09:10.631Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:09:10.631Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:09:11.230Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions 200
+[debug] [2024-01-31T10:09:11.231Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:09:11.232Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-31T10:09:11.232Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:09:12.905Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-31T10:09:12.905Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:09:12.908Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:09:14.481Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:09:14.482Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] 
+[info] === Deploying to 'mog-aasu'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-01-31T10:09:14.496Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:09:14.882Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:09:14.882Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-31T10:09:14.893Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-31T10:09:14.893Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:09:14.897Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-31T10:09:14.898Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:09:14.902Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-31T10:09:14.902Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:09:14.906Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-31T10:09:14.906Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:09:17.000Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-31T10:09:17.000Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-31T10:09:17.002Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-31T10:09:17.002Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-31T10:09:17.011Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-31T10:09:17.011Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-31T10:09:17.050Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-31T10:09:17.051Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-31T10:09:17.053Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig [none]
+[debug] [2024-01-31T10:09:17.498Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig 200
+[debug] [2024-01-31T10:09:17.498Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig {"projectId":"mog-aasu","storageBucket":"mog-aasu.appspot.com"}
+[debug] [2024-01-31T10:09:17.500Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs [none]
+[debug] [2024-01-31T10:09:18.134Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs 200
+[debug] [2024-01-31T10:09:18.135Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs {}
+[debug] [2024-01-31T10:09:18.142Z] Validating nodejs source
+[debug] [2024-01-31T10:09:22.646Z] > [functions] package.json contents: {
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.4"
+  }
+}
+[debug] [2024-01-31T10:09:22.646Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-31T10:09:22.651Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-31T10:09:22.678Z] Found firebase-functions binary at 'C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\node_modules\.bin\firebase-functions'
+[info] Serving at port 8039
+
+[info] url:mongodb://localhost:27017/upqrade
+
+[error] (node:17996) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] (node:17996) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:17996) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8039
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\server.js:206:7)
+    at Module._compile (node:internal/modules/cjs/loader:1375:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1234:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1899:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8039
+}
+
+Node.js v21.5.0
+
+[debug] [2024-01-31T10:09:25.758Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8039/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8039/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-01-31T10:09:26.085Z] FetchError: request to http://127.0.0.1:8039/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-31T10:13:19.820Z] ----------------------------------------------------------------------
+[debug] [2024-01-31T10:13:19.828Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-31T10:13:19.830Z] CLI Version:   13.1.0
+[debug] [2024-01-31T10:13:19.831Z] Platform:      win32
+[debug] [2024-01-31T10:13:19.831Z] Node Version:  v21.5.0
+[debug] [2024-01-31T10:13:19.832Z] Time:          Wed Jan 31 2024 15:43:19 GMT+0530 (India Standard Time)
+[debug] [2024-01-31T10:13:19.832Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-31T10:13:20.075Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-31T10:13:20.077Z] > authorizing via signed-in user (saniton@perceptionyst.com)
+[debug] [2024-01-31T10:13:20.077Z] [iam] checking project mog-aasu for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-31T10:13:20.084Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions [none]
+[debug] [2024-01-31T10:13:20.084Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:13:20.085Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:13:21.832Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions 200
+[debug] [2024-01-31T10:13:21.833Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:13:21.834Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-31T10:13:21.835Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:13:23.355Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-31T10:13:23.355Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:13:23.357Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:13:23.962Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:13:23.963Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] 
+[info] === Deploying to 'mog-aasu'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-01-31T10:13:23.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:13:24.679Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:13:24.680Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-31T10:13:24.687Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-31T10:13:24.687Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:13:24.691Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-31T10:13:24.691Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:13:24.694Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-31T10:13:24.695Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:13:24.699Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-31T10:13:24.700Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:13:26.586Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-31T10:13:26.587Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-31T10:13:26.590Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-31T10:13:26.590Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-31T10:13:26.592Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-31T10:13:26.592Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-31T10:13:26.596Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-31T10:13:26.596Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-31T10:13:26.598Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig [none]
+[debug] [2024-01-31T10:13:26.927Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig 200
+[debug] [2024-01-31T10:13:26.928Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig {"projectId":"mog-aasu","storageBucket":"mog-aasu.appspot.com"}
+[debug] [2024-01-31T10:13:26.930Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs [none]
+[debug] [2024-01-31T10:13:27.477Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs 200
+[debug] [2024-01-31T10:13:27.478Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs {}
+[debug] [2024-01-31T10:13:27.482Z] Validating nodejs source
+[debug] [2024-01-31T10:13:31.626Z] > [functions] package.json contents: {
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.4"
+  }
+}
+[debug] [2024-01-31T10:13:31.627Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-31T10:13:31.631Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-31T10:13:31.660Z] Found firebase-functions binary at 'C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\node_modules\.bin\firebase-functions'
+[info] Serving at port 8907
+
+[info] url:mongodb://localhost:27017/upqrade
+
+[error] (node:328) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] (node:328) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:328) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8907
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\server.js:206:7)
+    at Module._compile (node:internal/modules/cjs/loader:1375:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1234:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1899:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8907
+}
+
+Node.js v21.5.0
+
+[debug] [2024-01-31T10:13:34.584Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8907/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8907/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-01-31T10:13:34.868Z] FetchError: request to http://127.0.0.1:8907/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-31T10:14:10.557Z] ----------------------------------------------------------------------
+[debug] [2024-01-31T10:14:10.567Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-31T10:14:10.568Z] CLI Version:   13.1.0
+[debug] [2024-01-31T10:14:10.570Z] Platform:      win32
+[debug] [2024-01-31T10:14:10.570Z] Node Version:  v21.5.0
+[debug] [2024-01-31T10:14:10.571Z] Time:          Wed Jan 31 2024 15:44:10 GMT+0530 (India Standard Time)
+[debug] [2024-01-31T10:14:10.572Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-31T10:14:10.857Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-31T10:14:10.859Z] > authorizing via signed-in user (saniton@perceptionyst.com)
+[debug] [2024-01-31T10:14:10.859Z] [iam] checking project mog-aasu for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-31T10:14:10.866Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions [none]
+[debug] [2024-01-31T10:14:10.866Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:14:10.866Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:14:11.569Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions 200
+[debug] [2024-01-31T10:14:11.570Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mog-aasu:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-31T10:14:11.571Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-31T10:14:11.571Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:14:13.210Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-31T10:14:13.211Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mog-aasu/serviceAccounts/mog-aasu@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-31T10:14:13.213Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:14:13.822Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:14:13.822Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] 
+[info] === Deploying to 'mog-aasu'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-01-31T10:14:13.839Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu [none]
+[debug] [2024-01-31T10:14:14.181Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu 200
+[debug] [2024-01-31T10:14:14.181Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu {"projectId":"mog-aasu","projectNumber":"289337562695","displayName":"Mog Aasu","name":"projects/mog-aasu","resources":{"hostingSite":"mog-aasu"},"state":"ACTIVE","etag":"1_3fa40a66-f108-4043-9c57-3f7d791734c6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-31T10:14:14.190Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-31T10:14:14.190Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:14:14.195Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-31T10:14:14.195Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:14:14.199Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-31T10:14:14.199Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:14:14.204Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-31T10:14:14.204Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com x-goog-quota-user=projects/mog-aasu
+[debug] [2024-01-31T10:14:16.067Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-31T10:14:16.068Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-31T10:14:16.071Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-31T10:14:16.072Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-31T10:14:16.090Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-31T10:14:16.090Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-31T10:14:16.118Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-31T10:14:16.119Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mog-aasu/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-31T10:14:16.121Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig [none]
+[debug] [2024-01-31T10:14:16.473Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig 200
+[debug] [2024-01-31T10:14:16.474Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mog-aasu/adminSdkConfig {"projectId":"mog-aasu","storageBucket":"mog-aasu.appspot.com"}
+[debug] [2024-01-31T10:14:16.476Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs [none]
+[debug] [2024-01-31T10:14:16.992Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs 200
+[debug] [2024-01-31T10:14:16.993Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mog-aasu/configs {}
+[debug] [2024-01-31T10:14:16.996Z] Validating nodejs source
+[debug] [2024-01-31T10:14:21.018Z] > [functions] package.json contents: {
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.4"
+  }
+}
+[debug] [2024-01-31T10:14:21.019Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-31T10:14:21.026Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-31T10:14:21.069Z] Found firebase-functions binary at 'C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\node_modules\.bin\firebase-functions'
+[info] Serving at port 8897
+
+[info] url:mongodb://localhost:27017/upqrade
+
+[error] (node:17296) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] (node:17296) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:17296) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+[error] node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8897
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\sevilla dsouza\Desktop\New folder (5)\trial\server\server.js:206:7)
+    at Module._compile (node:internal/modules/cjs/loader:1375:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1234:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1899:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8897
+}
+
+Node.js v21.5.0
+
+[debug] [2024-01-31T10:14:24.258Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8897/__/quitquitquit failed, reason:  {"message":"request to http://localhost:8897/__/quitquitquit failed, reason: ","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2024-01-31T10:14:24.552Z] FetchError: request to http://127.0.0.1:8897/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\sevilla dsouza\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.

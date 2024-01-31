@@ -24,7 +24,8 @@
     },
     "functions": {
       "trial": {
-        "source": "server"
+        "source": "server",
+        "runtime": "nodejs18"
       }
     }
   },

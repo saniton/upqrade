@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "sdw2000"
+    "default": "mog-aasu",
+    "staging": "mog-aasu"
   },
   "targets": {
     "hosting": {
@@ -26,5 +27,6 @@
         "source": "server"
       }
     }
-  }
+  },
+  "etags": {}
 }

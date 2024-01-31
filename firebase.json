@@ -1,27 +1,16 @@
 {
+  "functions": [
+    {
+      "source": "server",
+      "runtime": "nodejs16"
+    }
+  ],
   "hosting": {
-    "public": "build",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
-  },
-  "functions": [
-    {
-      "source": "server",
-      "runtime": "nodejs18",
-      "codebase": "default"
-    },
-    {
-      "source": "functions",
-      "codebase": "functions",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ]
-    }
-  ]
+  }
 }

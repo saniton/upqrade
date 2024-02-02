@@ -203,10 +203,12 @@ app.post('/api/login', (req, res) => {
 
   
   // Start the server
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
-
-
-  // Export the app as a Cloud Function
-module.exports = app;
+  if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  }
+  
+  // Export the app for Firebase Cloud Functions
+  module.exports = app;
+  

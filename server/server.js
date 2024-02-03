@@ -9,6 +9,7 @@ const path = require('path'); // Add this line
 const cors = require('cors');
 const fastCsv = require('fast-csv');
 const fs = require('fs');
+const { decode } = require('punycode');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -191,10 +192,24 @@ app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
   if (username === validUsername && password === validPassword) {
-    const token = jwt.sign({ username }, process.env.SECRET_KEY, { expiresIn: '1m' });
+    const token = jwt.sign({ username }, process.env.SECRET_KEY, { expiresIn: '60s' });
     res.json({ success: true, token });
   } else {
     res.status(401).json({ success: false, message: 'Invalid username or password' });
+  }
+});
+
+app.post('/api/tokenVerify', (req, res) => {
+  const { presentToken } = req.body;
+
+
+  try {
+    const decode = jwt.verify(presentToken, process.env.SECRET_KEY);
+    res.status(200).json({ success: true, date: decode });
+  }
+  catch (e) {
+    console.log('------', e.message, '-------')
+    res.status(401).json({ success: false, message: ('Error while decoding token, Error: '+ e.message) });
   }
 });
 

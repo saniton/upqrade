@@ -44,7 +44,37 @@ const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
+  const [presentToken, setPresentToken] = useState(localStorage.getItem('token') || '');
 
+  
+  const verifyToken = async () =>{
+    try {
+      const response = await fetch('http://localhost:5000/api/tokenVerify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ presentToken }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {// Store the token in local storage
+        window.location.href="./admin";
+        console.log(data.message);
+        setLoginError(false);
+      } else {
+        // Login failed
+        setPresentToken('');
+        localStorage.setItem('token', '')
+        console.log(data.message);
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setLoginError(true);
+    }
+  }
   const handleLogin = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/login', {
@@ -59,7 +89,7 @@ const AdminLogin = () => {
 
       if (response.ok) {
         // Login successful
-        sessionStorage.setItem('token', data.token); // Store the token in local storage
+        localStorage.setItem('token', data.token); // Store the token in local storage
         window.location.href="./admin";
         console.log(data.message);
         setLoginError(false);
@@ -76,8 +106,10 @@ const AdminLogin = () => {
 
   return (
     <div style={styles.container}>
+      
       <h2 style={styles.title}>Admin Login</h2>
-      <form style={styles.form}>
+      {presentToken.length < 10 ? (
+        <form style={styles.form} >
         <label style={styles.label}>
           Username:
           <input
@@ -102,6 +134,10 @@ const AdminLogin = () => {
           Login
         </button>
       </form>
+      ) : (
+        <button onClick={verifyToken}>Login</button>
+      )}
+      
     </div>
   );
 };

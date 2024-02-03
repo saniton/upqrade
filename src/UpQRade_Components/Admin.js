@@ -8,12 +8,44 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Admin = () => {
   const [selectedDate, setSelectedDate] = useState(null); // State to store selected date
   const [data, setData] = useState([]);
+  const [presentToken, setPresentToken] = useState(localStorage.getItem('token') || '');
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
     // Fetch data based on the selected date
     fetchData(date);
   };
+
+  const verifyToken = async () =>{
+    try {
+      const response = await fetch('http://localhost:5000/api/tokenVerify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ presentToken }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {// Store the token in local storage
+        // window.location.href="./admin";
+        return
+        console.log(response.message);
+        // setLoginError(false);
+      } else {
+        // Login failed
+        // setPresentToken('');
+        localStorage.setItem('token', '')
+        window.location.href="./admin";
+        console.log(response.message);
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      // setLoginError(true);
+    }
+  }
 
   const fetchData = async (selectedDate) => {
     try {
@@ -41,12 +73,14 @@ const Admin = () => {
 
   useEffect(() => {
     // Check if the user has a valid token
-    const token = sessionStorage.getItem('token');
 
-    if (!token) {
+    if (!presentToken && presentToken.length < 10) {
       // Redirect to login if no token is present
       window.location.href = '/adminLogin';
     }
+    
+    verifyToken();
+
   }, []);
 
 

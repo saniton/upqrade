@@ -49,7 +49,7 @@ const AdminLogin = () => {
   
   const verifyToken = async () =>{
     try {
-      const response = await fetch('http://localhost:5000/api/tokenVerify', {
+      const response = await fetch('https://mog-asu-server.onrender.com/api/tokenVerify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const AdminLogin = () => {
   }
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch('https://mog-asu-server.onrender.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

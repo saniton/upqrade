@@ -72,7 +72,7 @@ const MyForm = ({ handleClose }) => {
  
     try {
       // Send the form data to the server
-      await axios.post('http://localhost:3001/submit', {
+      await axios.post('https://mog-asu-server.onrender.com/submit', {
         tableNo,
         name,
         phoneNumber,

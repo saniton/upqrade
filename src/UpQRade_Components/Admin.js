@@ -18,7 +18,7 @@ const Admin = () => {
 
   const verifyToken = async () =>{
     try {
-      const response = await fetch('http://localhost:5000/api/tokenVerify', {
+      const response = await fetch('https://mog-asu-server.onrender.com/api/tokenVerify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const Admin = () => {
   const fetchData = async (selectedDate) => {
     try {
       const formattedDate = selectedDate.toISOString().split('T')[0]; // Format date as 'YYYY-MM-DD'
-      const response = await fetch(`http://localhost:5000/admin?date=${formattedDate}`);
+      const response = await fetch(`https://mog-asu-server.onrender.com/admin?date=${formattedDate}`);
       if (response.ok) {
         const jsonData = await response.json();
         setData(jsonData);
@@ -88,7 +88,8 @@ const Admin = () => {
   const handleDownload = async () => {
     try {
       const formattedDate = selectedDate.toISOString().split('T')[0];
-      const file = await fetch(`http://localhost:5000/download-csv?date=${formattedDate}`);
+      const file = await fetch(`https://mog-asu-server.onrender.com/download-csv?date=${formattedDate}`);
+      console.log("fetched link")
       
       if (file.ok) {
         const text = await file.text();

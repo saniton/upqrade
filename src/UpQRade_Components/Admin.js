@@ -89,7 +89,6 @@ const Admin = () => {
     try {
       const formattedDate = selectedDate.toISOString().split('T')[0];
       const file = await fetch(`https://mog-asu-server.onrender.com/download-csv?date=${formattedDate}`);
-      console.log("fetched link")
       
       if (file.ok) {
         const text = await file.text();

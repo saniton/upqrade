@@ -87,21 +87,41 @@ const Admin = () => {
 
   const handleDownload = async () => {
     try {
+      // Check if a date is selected
+      if (!selectedDate) {
+        alert('Please select a date before downloading.');
+        return;
+      }
+
       const formattedDate = selectedDate.toISOString().split('T')[0];
-      const file = await fetch(`https://mog-asu-server.onrender.com/download-csv?date=${formattedDate}`);
-      
-      if (file.ok) {
-        const text = await file.text();
-        console.log(text);
-        alert("file downloaded successfully");
+      const response = await fetch(`https://mog-asu-server.onrender.com/admin/download?date=${formattedDate}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${presentToken}`, // Include token for authentication
+        },
+      });
+
+      if (response.ok) {
+        // Assuming the server responds with a downloadable file
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `data_${formattedDate}.csv`; // You may need to adjust the filename and format
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
       } else {
-        console.error('Failed to download CSV');
+        console.error('Error downloading data:', response.statusText);
+        // Handle the error accordingly
       }
     } catch (error) {
-      console.error(error);
+      console.error('Error downloading data:', error);
     }
   };
-
+    
 
   const handleClose = () => {
     window.location.href = "#";

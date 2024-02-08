@@ -34,6 +34,7 @@ const registrationSchema = new mongoose.Schema({
   name: String,
   phoneNumber: String,
   registrationTime: String,
+  ipAddress: String, // Add this line
 });
 
 registrationSchema.pre('save', function (next) {
@@ -69,11 +70,12 @@ app.post('/registrations', async (req, res) => {
 
     const { tableNumber, name, phoneNumber } = req.body;
 
-    // Save data to MongoDB
+    // Save data to MongoDB, including IP address
     const newRegistration = new Registration({
       tableNumber,
       name,
       phoneNumber,
+      ipAddress, // Add IP address to the registration data
     });
 
     await newRegistration.save();
@@ -83,6 +85,13 @@ app.post('/registrations', async (req, res) => {
     console.error('Error saving to MongoDB:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
+});
+
+
+app.get('/health', async (req, res) => {
+  console.log('Health api:', req.headers);
+
+    res.status(200).send('healthy!!!');
 });
 
 

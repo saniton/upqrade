@@ -35,7 +35,6 @@ function App(props) {
     
       <div className="button-container">
 
-
           <Routes>
             <Route exact path="/" element={<><Scanbtn2 /><ButtonsContainer /></>} />
             <Route path="/registrations" Component={RegisterForm} />
